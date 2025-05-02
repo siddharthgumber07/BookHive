@@ -6,7 +6,7 @@ Thumbs.db
 
 # === Node.js Backend ===
 backend/node_modules/
-backend/.env
+backend/config/.env
 backend/logs/
 backend/coverage/
 backend/npm-debug.log*
