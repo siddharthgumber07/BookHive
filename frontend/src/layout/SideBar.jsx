@@ -79,7 +79,7 @@ const SideBar = ({ isSideBarOpen, setIsSideBarOpen, setSelectedComponent }) => {
         </button>
       </nav>
       <div className="px-6 py-4">
-        <button className="py-2 font-medium text-center bg-transparent rounded-md hover:cursor-pointer flex items-center justify-center space-x-5 mx-auto w-fit">
+        <button className="py-2 font-medium text-center bg-transparent rounded-md hover:cursor-pointer flex items-center justify-center space-x-5 mx-auto w-fit" onClick={handleLogout}>
         <img src={logoutIcon} alt="icon" /><span>Log Out</span>
       </button>
       </div>
