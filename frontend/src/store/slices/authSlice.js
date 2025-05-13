@@ -104,7 +104,7 @@ const authSlice=createSlice({
             state.loading=false;
             state.message=action.payload;
         },
-        forgotPasswordFailed(state){
+        forgotPasswordFailed(state,action){
             state.loading=false;
             state.error=action.payload;
         },
@@ -123,7 +123,7 @@ const authSlice=createSlice({
             state.isAuthenticated=true;
             state.user=action.payload.user;
         },
-        resetPasswordFailed(state){
+        resetPasswordFailed(state,action){
             state.loading=false;
             state.error=action.payload;
         },
@@ -158,7 +158,7 @@ const authSlice=createSlice({
 
 
 export const resetAuthSlice=()=>(dispatch)=>{
-    dispatch(authSlice.actions.resetAuthSlice)
+    dispatch(authSlice.actions.resetAuthSlice())
 }
 
 export const register=(data)=>async(dispatch)=>{
@@ -242,7 +242,7 @@ export const forgotPassword=(email)=>async(dispatch)=>{
             "Content-Type":"application/json",
         },
     }).then(res=>{
-        dispatch(authSlice.actions.forgotPasswordSuccess(res.data))
+        dispatch(authSlice.actions.forgotPasswordSuccess(res.data.message))
     }).catch(error=>{
         dispatch(authSlice.actions.forgotPasswordFailed(error.response.data.message))
     })
