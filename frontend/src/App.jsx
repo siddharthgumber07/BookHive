@@ -15,10 +15,9 @@ const App = () => {
   const dispatch=useDispatch();
   useEffect(()=>{
     dispatch(getUser());
-    if(isAuthenticated && user.role==="admin"){
+    if(isAuthenticated && user.role==="Admin"){
       dispatch(fetchAllUsers());
     }
-
   },[])
   return (
     <Router>
