@@ -88,7 +88,7 @@ const borrowSlice = createSlice({
 
 export const fetchUserBorrowedBooks = () => async (dispatch) => {
     dispatch(borrowSlice.actions.fetchUserBorrowedBooksRequest());
-    await axios.get('http://localhost:4000/api/v1/borrow/borrowed-books-by-users', { withCredentials: true })
+    await axios.get('http://localhost:4000/api/v1/borrow/my-borrowed-books', { withCredentials: true })
         .then((response) => {
             dispatch(borrowSlice.actions.fetchUserBorrowedBooksSuccess(response.data.borrowedBooks));
         })
