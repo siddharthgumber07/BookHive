@@ -76,7 +76,7 @@ const MyBorrowedBooks = () => {
                     <td className="px-4 py-2">{formatDate(book.borrowedDate)}</td>
                     <td className="px-4 py-2">{formatDate(book.dueDate)}</td>
                     <td className="px-4 py-2">{book.returned?"Yes":"No"}</td>
-                    <td className="px-4 py-2"><BookA onClick={()=>openReadBookPopup(book.bookId)}/></td>
+                    <td className="px-4 py-2 cursor-pointer"><BookA onClick={()=>openReadBookPopup(book.bookId)}/></td>
                   </tr>
                 ))
               }
