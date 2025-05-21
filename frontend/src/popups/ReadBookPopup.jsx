@@ -27,11 +27,6 @@ const ReadBookPopup = ({book}) => {
             <label className='block text-gray-700 font-semibold'>Description</label>
             <p className='border border-gray-300 rounded-lg px-4 py-2 bg-gray-100'>{book&&book.description}</p>
           </div>
-
-          <div className="mb-4">
-            <label className='block text-gray-700 font-semibold'>Price</label>
-            <p className='border border-gray-300 rounded-lg px-4 py-2 bg-gray-100'>{book&&book.price}</p>
-          </div>
         </div>
 
         <div className="flex justify-end px-6 py-4 bg-gray-100 rounded-b-lg">
