@@ -17,7 +17,7 @@ dotenv.config({path:"./config/.env"})
 const PORT=process.env.PORT||3000;
 
 app.use(cors({
-    origin:process.env.FRONTEND_URL,
+    origin:"https://bookhive07.netlify.app",
     methods:["GET", "POST","PUT","DELETE"],
     credentials:true
 }))
