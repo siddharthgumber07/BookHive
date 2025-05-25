@@ -51,7 +51,7 @@ const bookSlice = createSlice({
 
 export const fetchAllBooks = () => async(dispatch) => {
     dispatch(bookSlice.actions.fetchBooksRequest());
-    await axios.get('http://localhost:4000/api/v1/book/all',{withCredentials: true})
+    await axios.get('https://bookhive-aqrr.onrender.com/api/v1/book/all',{withCredentials: true})
         .then((response) => {
             dispatch(bookSlice.actions.fetchBooksSuccess(response.data.books));
         })
