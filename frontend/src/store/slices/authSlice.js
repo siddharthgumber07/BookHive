@@ -163,7 +163,7 @@ export const resetAuthSlice=()=>(dispatch)=>{
 
 export const register=(data)=>async(dispatch)=>{
     dispatch(authSlice.actions.registerRequest());
-    await axios.post("http://localhost:4000/api/v1/auth/register",data,{
+    await axios.post("https://bookhive-aqrr.onrender.com/api/v1/auth/register",data,{
         withCredentials:true,
         headers:{
             "Content-Type":"application/json",
@@ -178,7 +178,7 @@ export const register=(data)=>async(dispatch)=>{
 
 export const otpVerification=(email,otp)=>async(dispatch)=>{
     dispatch(authSlice.actions.otpVerificationRequest());
-    await axios.post("http://localhost:4000/api/v1/auth/verify-otp",{email,otp},{
+    await axios.post("https://bookhive-aqrr.onrender.com/api/v1/auth/verify-otp",{email,otp},{
         withCredentials:true,
         headers:{
             "Content-Type":"application/json",
@@ -223,7 +223,7 @@ export const logout=()=>async(dispatch)=>{
 
 export const getUser=()=>async(dispatch)=>{
     dispatch(authSlice.actions.getUserRequest());
-    await axios.get("http://localhost:4000/api/v1/auth/profile",{
+    await axios.get("https://bookhive-aqrr.onrender.com/api/v1/auth/profile",{
         withCredentials:true,
     }).then(res=>{
         dispatch(authSlice.actions.getUserSuccess(res.data))
