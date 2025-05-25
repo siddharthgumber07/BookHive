@@ -101,7 +101,7 @@ export const fetchUserBorrowedBooks = () => async (dispatch) => {
 
 export const fetchAllBorrowedBooks = () => async (dispatch) => {
     dispatch(borrowSlice.actions.fetchAllBorrowedBooksRequest());
-    await axios.get('http://localhost:4000/api/v1/borrow/all-borrowed-books', { withCredentials: true })
+    await axios.get('http://localhost:4000/api/v1/borrow/borrowed-books-by-users', { withCredentials: true })
         .then((response) => {
             dispatch(borrowSlice.actions.fetchAllBorrowedBooksSuccess(response.data.borrowedBooks));
         })

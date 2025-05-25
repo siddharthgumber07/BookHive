@@ -76,7 +76,7 @@ const SideBar = ({ isSideBarOpen, setIsSideBarOpen, setSelectedComponent }) => {
           </button>
           </>
         )}
-        <button className="w-full py-2 font-medium bg-transparent rounded-md hover:cursor-pointer flex items-center space-x-2" onClick={()=>dispatch(toggleSettingPopUp())}>
+        <button className=" md:hidden w-full py-2 font-medium bg-transparent rounded-md hover:cursor-pointer flex items-center space-x-2" onClick={()=>dispatch(toggleSettingPopUp())}>
           <img src={settingIcon} alt="icon" /><span>Update Credentials</span>
         </button>
       </nav>
