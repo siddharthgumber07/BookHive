@@ -63,7 +63,7 @@ export const fetchAllBooks = () => async(dispatch) => {
 
 export const addBook= (data) => async(dispatch) => {
     dispatch(bookSlice.actions.addBookRequest());
-    await axios.post('http://localhost:4000/api/v1/book/admin/add', data, 
+    await axios.post('https://bookhive-aqrr.onrender.com/api/v1/book/admin/add', data, 
         {
             withCredentials: true, 
             headers: {
