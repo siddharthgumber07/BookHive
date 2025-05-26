@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import logo_with_title from "../assets/logo-with-title.png";
+import logo_with_title from "../assets/logo-with-title1.png";
 import logoutIcon from "../assets/logout.png";
 import closeIcon from "../assets/white-close-icon.png";
 import dashboardIcon from "../assets/element.png";
