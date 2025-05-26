@@ -43,7 +43,7 @@ const SideBar = ({ isSideBarOpen, setIsSideBarOpen, setSelectedComponent }) => {
   }
 
   if (!isAuthenticated && !loading) {
-    navigate('/login'); // or "/login" — wherever you want
+    navigate('/login'); 
   }
 }, [error, message, dispatch, isAuthenticated, loading, navigate]);
 
