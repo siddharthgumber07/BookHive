@@ -14,6 +14,8 @@ import {toast} from "react-toastify";
 import { toggleAddNewAdminPopUp, toggleSettingPopUp } from "../store/slices/popUpSlice";
 import AddNewAdmin from '../popups/AddNewAdmin'
 import SettingPopup from "../popups/SettingPopup";
+import { useNavigate } from 'react-router-dom';
+
 const SideBar = ({ isSideBarOpen, setIsSideBarOpen, setSelectedComponent }) => {
   const dispatch = useDispatch();
   const {addNewAdminPopUp}=useSelector((state)=>state.popup);
@@ -27,16 +29,24 @@ const SideBar = ({ isSideBarOpen, setIsSideBarOpen, setSelectedComponent }) => {
   const handleLogout = () => {
     dispatch(logout());
   }
-  useEffect(()=>{
-    if(error){
-      toast.error(error);
-      dispatch(resetAuthSlice());
-    }
-    if(message){
-      toast.success(message);
-      dispatch(resetAuthSlice());
-    }
-  }, [error,message,dispatch,isAuthenticated,loading]);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+  if (error) {
+    toast.error(error);
+    dispatch(resetAuthSlice());
+  }
+  if (message) {
+    toast.success(message);
+    dispatch(resetAuthSlice());
+  }
+
+  if (!isAuthenticated && !loading) {
+    navigate('/login'); // or "/login" — wherever you want
+  }
+}, [error, message, dispatch, isAuthenticated, loading, navigate]);
+
   return (
     <>
     <aside className={`${isSideBarOpen?"left-0":"-left-full"} z-10 transition-all duration-700 md:relative md:left-0 flex w-64 bg-black text-white flex-col h-full`} style={{position:"fixed"}}>
@@ -83,7 +93,7 @@ const SideBar = ({ isSideBarOpen, setIsSideBarOpen, setSelectedComponent }) => {
       <div className="px-6 py-4">
         <button className="py-2 font-medium text-center bg-transparent rounded-md hover:cursor-pointer flex items-center justify-center space-x-5 mx-auto w-fit" onClick={handleLogout}>
         <img src={logoutIcon} alt="icon" /><span>Log Out</span>
-      </button>
+        </button>
       </div>
       <img src={closeIcon} alt="icon" onClick={()=>setIsSideBarOpen(!isSideBarOpen)} className="h-fit w-fit absolute top-0 right-4 mt-4 block md:hidden"/>
     </aside>
