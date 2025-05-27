@@ -83,7 +83,7 @@ const UserDashboard = () => {
             <span className="bg-gray-300 h-20 lg:h-full min-w-20 flex justify-center items-center rounded-lg"><img src={browseIcon} alt="browseIcon" className="w-8 h-8" /></span>
             <p className="text-lg xl:text-xl font-semibold">Browse Book Inventory</p>
           </div>
-          <img src={logo_with_title} alt="logo" className="hidden lg:block w-auto justify-end"/>
+          {/* <img src={logo_with_title} alt="logo" className="hidden lg:block w-auto justify-end"/> */}
         </div>
       </div>
 
